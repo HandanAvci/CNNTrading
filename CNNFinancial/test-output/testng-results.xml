@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6373" started-at="2020-04-11T18:06:38Z" finished-at="2020-04-11T18:06:44Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6373" started-at="2020-04-11T18:06:38Z" finished-at="2020-04-11T18:06:44Z">
+      <class name="com.regression.MarketData">
+        <test-method status="PASS" signature="setup_tc1()[pri:0, instance:com.regression.MarketData@5cb9f472]" name="setup_tc1" is-config="true" duration-ms="6308" started-at="2020-04-11T18:06:38Z" finished-at="2020-04-11T18:06:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup_tc1 -->
+        <test-method status="PASS" signature="regression_tc2()[pri:0, instance:com.regression.MarketData@5cb9f472]" name="regression_tc2" duration-ms="9" started-at="2020-04-11T18:06:44Z" finished-at="2020-04-11T18:06:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- regression_tc2 -->
+      </class> <!-- com.regression.MarketData -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
