@@ -12,9 +12,6 @@ public class MasterPageFactory {
 		PageFactory.initElements(driver, this);
 	}
 
-		
-		
-
 
 		@FindBy(xpath="(//*[@class='sc-htoDjs dpodOf'])[1]//li")
 		private List<WebElement> allPageName;
@@ -22,7 +19,22 @@ public class MasterPageFactory {
 			return allPageName;
 		}
 		
+		@FindBy //TC-3
+		(xpath=("//*[@class,'ticker-name-charge']"))
+		private List<WebElement>topSecurityNameAndValue;
+
+		public List<WebElement> getTopSecurityNameAndValue() {
+			return topSecurityNameAndValue;
+		}
 		
+		
+		@FindBy //TC-3
+		(xpath="(//*[@class='sc-htoDjs dpodOf'])[1]//a")
+		private List<WebElement>allPage;
+
+		public List<WebElement> getAllPage() {
+			return allPage;
+		}
 		
 }
 
