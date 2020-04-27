@@ -51,7 +51,7 @@ public void regression_tc2() {
 	public void regression_tc3() throws Throwable {
 		
 		 myMap = new LinkedHashMap<>();
-		new Actions(driver).moveToElement(pf.getAllPage().get(0)).click().perform();// 1
+		new Actions(driver).moveToElement(pf.getAllPageName().get(0)).click().perform();// 1
 		ExplicitWait.getMyWait(driver, pf.getTopSecurityNameAndValue().get(0));
 		
 		for (int i = 0; i < pf.getTopSecurityNameAndValue().size(); i++) {
@@ -59,13 +59,30 @@ public void regression_tc2() {
 			myMap.put(pf.getTopSecurityNameAndValue().get(i).getAttribute("data-ticker-name"),
 					pf.getTopSecurityNameAndValue().get(i).getText());
 		}
+		System.out.println(myMap.toString());
+		System.out.println(myMap.keySet().toString());
+		System.out.println(myMap.values().toString());
 	}
 		@Test(dependsOnMethods = { "regression_tc3" })
 		public void regression_tc4() throws Throwable {
 			List<String> testDataList = new ArrayList<>();
-			testDataList=ReturnExcelNew.returnExcel("./Test Data/Test Data Financial.xlsx", "Market");
+			testDataList=ReturnExcelNew.returnExcel("./Test_Data_Financial.xlsx", "Market");
+			System.out.println(testDataList.get(1));
+		
+			if(myMap.keySet().toString().trim().contains(testDataList.get(0).trim())) {
+				System.out.println("Top section Name Validation Passed...."+myMap.keySet());
+			   Assert.assertEquals(myMap.keySet().toString().trim(), testDataList.get(0).trim());
+			}else {
+				
+			System.out.println("Top section Name Validation Failed...." + myMap.keySet()+"=" +testDataList);
+			   Assert.assertEquals(myMap.keySet(), testDataList.get(0), "Failed the name....");
+			
+			}
+			//if(myMap.values().tostring().trim().contains(testDataList.get(0)))
+			
+			
 			//Log.info(testDataList.get(1));
-			if(myMap.keySet().contains(testDataList.get(0)) 
+			/*if(myMap.keySet().contains(testDataList.get(0).trim()) {
 					&& myMap.values().contains(testDataList.get(1))) {
 				//Log.info("Top section Name Validation Passed ....."+myMap.keySet()+" = "+testDataList.get(0));
 				Assert.assertEquals(myMap.keySet(), testDataList.get(0),"Passed the name........");
@@ -77,6 +94,7 @@ public void regression_tc2() {
 				//Log.info("Top section Value Validation Failed ....."+myMap.values()+" = "+testDataList.get(1));
 				Assert.assertEquals(myMap.values(), testDataList.get(1),"Failed the value........");
 			}
+			*/
 	}
 		@AfterTest
 		public void teardown() {

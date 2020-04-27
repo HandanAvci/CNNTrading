@@ -11,7 +11,7 @@ public class AllPageTitle {
 		System.out.println("Total page number= " + pf.getAllPageName().size());
 		for(int i=0; i<pf.getAllPageName().size(); i++) {
 			ExplicitWait.getMyWait(driver, pf.getAllPageName().get(i));
-			HighLighter.getcolour(driver, pf.getAllPageName().get(i), "red");
+			HighLighter.getColor(driver, pf.getAllPageName().get(i), "red");
 			pf.getAllPageName().get(i).click();
 			System.out.println("Current Page Number="+i + "Title is ="+driver.getTitle());
 			driver.navigate().back();

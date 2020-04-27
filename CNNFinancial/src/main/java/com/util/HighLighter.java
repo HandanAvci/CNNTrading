@@ -7,33 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HighLighter {
-	public static void colour(WebDriver driver, WebElement element) {
-
+public static void getColor(WebDriver driver, WebElement element,String color) {
 		
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].style.border='3px solid red'", element);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].style.border='3px solid "+color+"'", element);
 	}
-
-
-
-
-
-
-
-	public static void getcolour(WebDriver driver, WebElement webElement, String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-
-
-
-
-	public static void getColor(WebDriver driver, WebElement webElement, String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

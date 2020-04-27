@@ -15,7 +15,7 @@ public class DriverScript {
 		//Another browser capabilities here
 		
 		
-		protected WebDriver driver;
+		//protected WebDriver driver;
 		public static WebDriver getDriver(String URL){ 
 		
 	
