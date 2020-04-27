@@ -11,12 +11,12 @@ public class ObjectMap {
 	String file = "./config.properties";
 	FileInputStream fis=null;
 	try {
-		fis = new FileInputStream(file);
+		fis = new FileInputStream(file); //serilization 
 	} catch (FileNotFoundException e) {
 		
 		e.printStackTrace();
 	} 
-	Properties properties=new Properties();  
+	Properties properties=new Properties(); // read to notepad 
 	
 	try {
 		properties.load(fis);
